@@ -1,4 +1,5 @@
 #include <at89x52.h>
+#include "lcd1602.h"
 
 /* 
 +--------+------+------+-----------+
@@ -40,6 +41,9 @@ void null_func(void);
 
 void main(void)
 {
+
+    InitLcd1602(); 
+
     TMOD = 0x00;
     ET0 = 1;
     TR0 = 1;
@@ -49,6 +53,8 @@ void main(void)
 
 	P0 = 0x81;
 
+    ShowStr("hello World!");
+    LcdShowNum(1, 1, 123);
 	for (;;) {
 	}
 
