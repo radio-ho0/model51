@@ -18,6 +18,7 @@ hex: rel
 
 rel:
 	$(CC) $(FLAGS) $(SRC)/lcd1602.c -c -o $(OUTPUT)/lcd1602.rel
+	$(CC) $(FLAGS) $(SRC)/distancer.c -c -o $(OUTPUT)/distancer.rel
 	
 .PHONY: clean
 
