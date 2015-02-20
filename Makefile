@@ -23,10 +23,14 @@ rel:
 .PHONY: clean
 
 clean:
+	@echo cleaning...
 	-rm  $(OUTPUT)/*.hex 
+	-rm  $(OUTPUT)/*.rel
+	-rm  $(OUTPUT)/*.asm
 	
 
 fire:
+	@echo Downloading the 51MCU ROM!
 	stcflash $(OUTPUT)/$(FILENAME).bin  ###
-	# I hate sudo
-	#sudo stcflash timer.bin  ###
+	@# I hate sudo   # @ close echoing
+	@#sudo stcflash timer.bin  ###
